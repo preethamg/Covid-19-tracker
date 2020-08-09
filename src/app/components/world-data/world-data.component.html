@@ -1,0 +1,14 @@
+<div class="card" style="margin-top: 5%; width: 50%; margin-left: 25%;">
+    <div class="card-header">
+        <h5>World's Covid-19 Data</h5>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Total Confirmed: <span class="text-warning">{{worldTotalConfirmedCount | number}}</span>
+        </h4>
+        <h4 class="card-title">Total Recovered: <span class="text-success">{{worldTotalRecoveredCount | number}}</span>
+        </h4>
+        <h4 class="card-title">Total Deceased: <span class="text-danger">{{worldTotalDeathCount | number}}</span></h4>
+        <br>
+        <a routerLink="/Country" class="btn btn-primary">Get countrywise data</a>
+    </div>
+</div>

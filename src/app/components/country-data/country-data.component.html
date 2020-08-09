@@ -1,0 +1,27 @@
+<div class="card" style="margin-top: 5%; width: 50%; margin-left: 25%;">
+    <div class="card-header">
+        Countrywise Covid-19 Data
+    </div>
+    <div class="card-body">
+        <div class="input-group">
+            <select class="custom-select" id="inputGroupSelect04" (change)="countrySelected($event.target.value)">
+                <option selected disabled>Select a country</option>
+                <option *ngFor="let country of countryList" [value]="country.Slug">{{country.Country}}</option>
+            </select>
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="getCountryData()">Get latest
+                    data</button>
+            </div>
+        </div>
+        <br>
+        <h4 class="card-title">Country : <span class="text-primary">{{displayedCountry | titlecase}}</span></h4>
+        <h4 class="card-title">Last updated on: <span class="text-info">{{lastUpdatedDate | date :'shortDate'}}</span></h4>
+        <h4 class="card-title">Total Confirmed: <span class="text-warning">{{countrywiseConfirmedCount | number}}</span>
+        </h4>
+        <h4 class="card-title">Total Recovered: <span class="text-success">{{countrywiseRecoveredCount | number}}</span>
+        </h4>
+        <h4 class="card-title">Total Deceased: <span class="text-danger">{{countrywiseDeathsCount | number}}</span></h4>
+        <br>
+        <a routerLink="/world" class="btn btn-primary">Get world data</a>
+    </div>
+</div>
